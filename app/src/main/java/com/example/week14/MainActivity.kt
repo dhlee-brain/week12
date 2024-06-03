@@ -2,6 +2,7 @@ package com.example.week14
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
@@ -18,8 +19,38 @@ import androidx.compose.ui.Modifier
 import com.example.week14.ui.theme.Week14Theme
 
 class MainActivity : ComponentActivity() {
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+    }
+    override fun onStart() {
+        super.onStart()
+        Log.i("test", "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("test", "onResume")
+    }
+
+    override fun onPause(){
+        super.onPause()
+        Log.i("test", "onPause")
+    }
+
+    override fun onStop(){
+        super.onStop()
+        Log.i("test", "onStop")
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("test", "onDestroy")
+    }
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("test", "onCreate")
         setContent {
             Week14Theme {
                 // A surface container using the 'background' color from the theme
